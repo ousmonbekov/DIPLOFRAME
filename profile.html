@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UWEDFRAME - Mening profilim</title>
+    <link rel="stylesheet" href="style.css"> <!-- Asosiy stillardan foydalanamiz -->
+    <link rel="stylesheet" href="profile_style.css"> <!-- Profil uchun yangi stillar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- NAVBAR (o'zgarishsiz qoldiramiz) -->
+<header class="navbar">
+    <div class="nav-left">
+        <img src="assest/logo.jpg" alt="Diploframe Association Logotipi" class="logo">
+        <div class="brand-text">
+            <h2>DIPLOFRAME</h2>
+            <span>Framing future diplomats association</span>
+        </div>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="events.html">Tadbirlar</a>
+        <!-- Bu yerda tizimdan chiqish havolasi bo'ladi deb faraz qilamiz -->
+        <a href="index.html" class="login">Chiqish</a> 
+        <a href="profile.html" class="status-btn">Profil</a>
+    </nav>
+</header>
+
+<!-- PROFILNING ASOSIY QISMI -->
+<main class="profile-main">
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="assest/user-avatar.jpg" alt="Profil rasmi" class="profile-pic">
+            <h1>Alisher Navoiy</h1> <!-- Foydalanuvchi ismi misoli -->
+            <p>Diploframe Volontyori</p>
+        </div>
+
+        <div class="rating-section">
+            <h3>Sizning reytingingiz</h3>
+            <div class="stars">
+                <!-- Bu yerda yulduzchalar ko'rsatiladi -->
+                <span class="star active">★</span>
+                <span class="star active">★</span>
+                <span class="star active">★</span>
+                <span class="star active">★</span>
+                <span class="star inactive">★</span>
+            </div>
+            <p class="rating-score">5 dan 4 yulduz</p>
+        </div>
+
+        <div class="stats-section">
+            <h3>Faoliyat</h3>
+            <div class="stat-card">
+                <h4>Tadbirlarda qatnashildi</h4>
+                <p>12</p>
+            </div>
+            <div class="stat-card">
+                <h4>Volontyorlik soatlari</h4>
+                <p>45</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
+
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Profile</h2>
+
+<p><b>Username:</b> {{ request.user.username }}</p>
+<p><b>Email:</b> {{ request.user.email }}</p>
+
+{% endblock %}
